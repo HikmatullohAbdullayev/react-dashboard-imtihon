@@ -1,14 +1,11 @@
 import React from 'react';
 
-function Hero(props) {
+function LoginPage(props) {
     return (
         <div>
-            hero
+            LoginPage
         </div>
     );
 }
 
-export default Hero;
-
-
-
+export default LoginPage;
