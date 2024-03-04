@@ -88,7 +88,7 @@ function Product(props) {
           ))}
         </div>
 
-        <div className="paggination ">
+        <div className="paggination mt-[85px] ">
           <ul className="flex justify-center items-center gap-10 "> 
             <li className=" border-b-2 hover:border-primary  ">
               <a href="#portal" onClick={()=>(setPage(1))} className="text-24 block py-[19px] px-32">1</a>
