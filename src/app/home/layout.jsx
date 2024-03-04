@@ -9,7 +9,6 @@ export const metadata = {
 export default function HomeLayout({ children }) {
   return (
     <section>
-      home
         <Home/>
     </section>
   );

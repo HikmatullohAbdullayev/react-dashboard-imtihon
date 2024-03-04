@@ -3,11 +3,12 @@ import React from "react";
 import Nav from "./components/Nav.jsx";
 import ButtonsNav from "./components/ButtonsNav.jsx";
 import Logo from "../../assets/icon/Logo.jsx";
-// import BurgerMenu from "./components/BurgerMenu"
 import Link from "next/link";
 import { useState } from "react";
 
 function Header(props) {
+
+  
   const [openMenu, setOpenMenu] = useState(true);
   const handeMenu = () => {
     setOpenMenu(!openMenu);
@@ -21,7 +22,7 @@ function Header(props) {
             <Nav />
           </nav>
           <span className="py-[15px] cursor-pointer  ">
-            <Link href="/">
+            <Link href="/" >
               <Logo />
             </Link>
           </span>

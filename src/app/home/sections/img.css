@@ -4,6 +4,19 @@
     background-position: center;
     background-size: 70%;
 }
+.card_box:hover .hover_img{
+    filter: blur(1px);
+}
+.card_box:hover .hover_effect{
+visibility: visible;
+/* opacity: 20%; */
+}
+
+.hover_effect{
+visibility: hidden;
+}
+
+
 @media (max-width: 1130px) {
     .bgimg {
         background-size: 80%;
