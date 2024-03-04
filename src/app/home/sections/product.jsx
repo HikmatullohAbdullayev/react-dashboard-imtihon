@@ -57,7 +57,7 @@ function Product(props) {
         <div className="grid gap-40  relative  w-[100%]    bg-white rounded-6 mt-100   grid-cols-[repeat(auto-fill,minmax(250px,1fr))]  mx-auto">
           {dataa.map((item) =>(
               <div className="   felx p-8 flex-col justify-between max-w-[250px]  mx-auto  overflow-hidden    hover:shadow-lg" key={item.id}>
-              <div className=" card_box relative max-w-[250px] h-[300px] p-10"> 
+              <div className=" card_box relative max-w-[250px] h-[300px] "> 
                <img className=" hover_img  w-full h-full object-cover hover:blur-lg " src={item.img} alt={item.name} />
                <div className=" hover_effect absolute left-0 top-0 w-full h-full   ">
                 <div className="  flex flex-col justify-center items-center gap-[13px]  absolute mx-auto w-full h-full  ">
