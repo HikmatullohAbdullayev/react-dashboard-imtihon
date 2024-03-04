@@ -8,7 +8,7 @@ function Home(props) {
     return (
         <div>
                 Hero
-            {/* <Hero/> */}
+            <Hero/>
         </div>
     );
 }

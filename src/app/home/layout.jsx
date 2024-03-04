@@ -10,7 +10,7 @@ export default function HomeLayout({ children }) {
   return (
     <section>
       home
-        {/* <Home/> */}
+        <Home/>
     </section>
   );
 }
