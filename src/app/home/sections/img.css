@@ -9,7 +9,6 @@
 }
 .card_box:hover .hover_effect{
 visibility: visible;
-/* opacity: 20%; */
 }
 
 .hover_effect{

@@ -10,3 +10,6 @@
     color: red;
     fill: red;
 }
+*{
+    scroll-behavior: smooth;
+}
