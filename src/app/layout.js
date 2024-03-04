@@ -16,11 +16,11 @@ export default function RootLayout({ children }) {
       <body className= " flex flex-col justify-between h-screen">
         <div className="box">
         <Header/>
-        <main className="w-full h-screen text-center align-middle bg-primary">
+        <main className="w-full h-screen text-center align-middle ">
         {children}
         </main>
         </div>
-        <Footer/>
+        {/* <Footer/> */}
         </body>
     </html>
   );

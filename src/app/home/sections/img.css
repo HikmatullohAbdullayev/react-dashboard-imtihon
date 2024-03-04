@@ -1,0 +1,24 @@
+.bgimg{
+    background-image: url(../../../../public/LogoBanner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+@media (max-width: 1130px) {
+    .bgimg {
+        background-size: 80%;
+
+    }
+  }
+@media (max-width: 878px) {
+    .bgimg {
+        background-size: 85%;
+
+    }
+  }
+@media (max-width: 780px) {
+    .bgimg {
+        background-size: 90%;
+
+    }
+  }

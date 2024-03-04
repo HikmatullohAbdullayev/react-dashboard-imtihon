@@ -7,7 +7,6 @@ function Home(props) {
    
     return (
         <div>
-            home
 
             <Hero/>
         </div>
