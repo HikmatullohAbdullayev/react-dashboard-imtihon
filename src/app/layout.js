@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-      <body className= " flex flex-col justify-between ">
+      <body className= " flex flex-col justify-between h-screen ">
         <div className="box">
         <Header/>
         <main className="w-full  text-center align-middle ">

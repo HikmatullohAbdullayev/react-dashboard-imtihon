@@ -18,18 +18,22 @@ function ProductAll({url}) {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState({})
   const [filterData, setFilterData] = useState([])
-  
-  
+  const [token, setToken] = useState(null)
+
   const [allProduct, setAllProduct] = useState([])
+  const [allProduct2, setAllProduct2] = useState([])
 
   // .some((product) => product.id === item.id)
 
  
-  
 
 
 
   useEffect(() => {
+    const chekToken = localStorage.getItem("token")
+    setToken(chekToken)
+     console.log(token);
+
     const fetchData = async () => {
       try {
         let response;
@@ -65,7 +69,7 @@ function ProductAll({url}) {
     try {
       const tekshirish = allProduct.some((product) => product.id === item.id);
   
-     if (1===2) {
+     if (token) {
       if (!tekshirish) {
         setAllProduct([...allProduct, item]);
         localStorage.setItem("favorite", JSON.stringify([...allProduct, item]));
@@ -91,15 +95,15 @@ const [allProduct2, setAllProduct2] = useState([])
 
 const bosildiCart = (item) => {
   try {
-    const tekshirish = allProduct.some((product) => product.id === item.id);
+    const tekshirish = allProduct2.some((product) => product.id === item.id);
 
-   if (1===2) {
+   if (token) {
     if (!tekshirish) {
-      setAllProduct([...allProduct, item]);
-      localStorage.setItem("favorite", JSON.stringify([...allProduct, item]));
-      toast.success("Muvafaqiyatli qo'shildi Favorite bo'limiga");
+      setAllProduct([...allProduct2, item]);
+      localStorage.setItem("Cart", JSON.stringify([...allProduct2, item]));
+      toast.success("Muvafaqiyatli qo'shildi Cart bo'limiga");
     } else {
-      toast.error("Bu mahsulotdan bor Favorite bo'limida");
+      toast.error("Bu mahsulotdan bor Cart bo'limida");
     }
 
    } else {
