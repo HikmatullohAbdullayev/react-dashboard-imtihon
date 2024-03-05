@@ -3,6 +3,7 @@ import "./style/globals.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
       <body className= " flex flex-col justify-between ">
         <div className="box">
         <Header/>

@@ -1,7 +1,9 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
+
+import { useRouter } from "next/navigation";
 import { request } from "@/config/request";
-// import "./img.css";
+import "../../src/app/home/sections/img.css";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import Like2Icon from "@/assets/icon/Like2Icon";
@@ -10,8 +12,21 @@ import VectorRigthIcon from "@/assets/icon/VectorRigthIcon";
 
 function ProductAll({url}) {
 
+  const router = useRouter()
+
   const [dataa, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [category, setCategory] = useState({})
+  const [filterData, setFilterData] = useState([])
+  
+  
+  const [allProduct, setAllProduct] = useState([])
+
+  // .some((product) => product.id === item.id)
+
+ 
+  
+
 
 
   useEffect(() => {
@@ -38,36 +53,47 @@ function ProductAll({url}) {
         console.error(error);
       }
     };
-
+    
     fetchData();
   }, [page]);
-  console.log(dataa);
+  // console.log(dataa);
 
-//   const [allProduct, setAllProduct] = useState([])
+
+
+ 
+  const bosildiFavorite = (item) => {
+    try {
+      const tekshirish = allProduct.some((product) => product.id === item.id);
   
-//   const bosildi = ( item) => {
-//    try {
-   
-//     allProduct.push(item)
-//     const  chekAllProduct = allProduct.filter(aa => aa.id != item.id )
-//     localStorage.setItem("data", JSON.stringify(chekAllProduct));
-//     toast.success("Muvafaqiyatli qo'shildi")
-//     console.log(chekAllProduct)
-//     // console.log(allProduct)
-//    } catch (error) {
-//     toast.error("Xatolik yuz berdi")
-//     console.log(error.message);
-    
-//    }
-   
-//   };
+     if (1===2) {
+      if (!tekshirish) {
+        setAllProduct([...allProduct, item]);
+        localStorage.setItem("favorite", JSON.stringify([...allProduct, item]));
+        toast.success("Muvafaqiyatli qo'shildi Favorite bo'limiga");
+      } else {
+        toast.error("Bu mahsulotdan bor Favorite bo'limida");
+      }
 
-const [allProduct, setAllProduct] = useState([])
+     } else {
+      
+       toast.error("login qilin avval Favorite");
+      router.push("/login")
 
-const bosildiFavorite = (item) => {
+     }
+    } catch (error) {
+      toast.error("Xatolik  bor");
+      console.log(error.message);
+    }
+  };
+ 
+
+const [allProduct2, setAllProduct2] = useState([])
+
+const bosildiCart = (item) => {
   try {
     const tekshirish = allProduct.some((product) => product.id === item.id);
 
+   if (1===2) {
     if (!tekshirish) {
       setAllProduct([...allProduct, item]);
       localStorage.setItem("favorite", JSON.stringify([...allProduct, item]));
@@ -75,27 +101,15 @@ const bosildiFavorite = (item) => {
     } else {
       toast.error("Bu mahsulotdan bor Favorite bo'limida");
     }
+
+   } else {
+    
+     toast.error("login qilin avval Cart");
+
+     router.push("/login")
+   }
   } catch (error) {
-    toast.error("Xatolik yuz berdi");
-    console.log(error.message);
-  }
-};
-
-const [allProduct2, setAllProduct2] = useState([])
-
-const bosildiCart = (item) => {
-  try {
-    const tekshirish2 = allProduct2.some((product) => product.id === item.id);
-
-    if (!tekshirish2) {
-      setAllProduct2([...allProduct2, item]);
-      localStorage.setItem("cart", JSON.stringify([...allProduct2, item]));
-      toast.success("Muvafaqiyatli qo'shildi Cart bo'limiga");
-    } else {
-      toast.error("Bu mahsulotdan bor Cart bo'limida");
-    }
-  } catch (error) {
-    toast.error("Xatolik yuz berdi");
+    toast.error("Xatolik  bor");
     console.log(error.message);
   }
 };
@@ -104,18 +118,20 @@ const bosildiCart = (item) => {
   return (
     <section
       id="portal"
-      className="   flex justify-between   items-center container px-20 mx-auto max-w-[1338px] pt-[120px] pb-[129px] "
+      className="   flex justify-between   items-center container px-20 mx-auto max-w-[1338px]  pb-[129px] "
     >
       <Toaster position="top-center" reverseOrder={false} />
 
-      <div className="filter w-[500px]">filter</div>
+    
+
       <div className="w-full text-center ">
-        <div className="grid gap-40  relative  w-[100%]    bg-white rounded-6 mt-100   grid-cols-[repeat(auto-fill,minmax(280px,1fr))]  mx-auto">
+        <div className="grid gap-40  relative  w-[100%]    bg-white rounded-6    grid-cols-[repeat(auto-fill,minmax(280px,1fr))]  mx-auto">
           {dataa.map((item) => (
             <div
               className="   felx p-8 flex-col justify-between   mx-auto  overflow-hidden    hover:shadow-lg"
               key={item.id}
             >
+             
               <div className=" card_box relative w-[270px] h-[300px] ">
                 <img
                   className=" hover_img  w-full h-full object-cover hover:blur-lg "
@@ -146,7 +162,7 @@ const bosildiCart = (item) => {
                 <p className="text-[20px] font-normal ">${item.price}</p>
               </div>
             </div>
-          ))}
+          )) }
         </div>
 
         <div className="paggination mt-[85px] ">
