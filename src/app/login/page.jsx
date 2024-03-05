@@ -3,9 +3,14 @@ import React from 'react';
 import {useRef} from "react"
 import axios from 'axios';
 import  { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
+
 
 function LoginPage(props) {
-    const emailRef = useRef(null)
+  const router = useRouter()
+
+  const emailRef = useRef(null)
     const passwordRef = useRef(null)
     
 
@@ -21,6 +26,8 @@ function LoginPage(props) {
 
        
         console.log(response.data.token);
+
+          router.push("/")
       })
       .catch(function (error) {
         console.log(error);

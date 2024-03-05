@@ -7,13 +7,23 @@ import { Toaster } from "react-hot-toast";
 import Like2Icon from "@/assets/icon/Like2Icon";
 import ShopIcon from "@/assets/icon/ShopIcon";
 import VectorRigthIcon from "@/assets/icon/VectorRigthIcon"
+import { useRouter } from "next/navigation";
+
+
 
 
 function ProductAll({ url }) {
   const [dataa, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const [token, setToken] = useState(null)
+
+  const router = useRouter()
 
   useEffect(() => {
+    const chekToken = localStorage.getItem("token")
+    setToken(chekToken)
+     console.log(token);
+
     const fetchData = async () => {
       try {
         let response;
@@ -48,13 +58,20 @@ function ProductAll({ url }) {
     try {
       const tekshirish = allProductHome.some((product) => product.id === item.id);
 
+     if (token) {
       if (!tekshirish) {
         setAllProductHome([...allProductHome, item]);
         localStorage.setItem("favorite", JSON.stringify([...allProductHome, item]));
-        toast.success("Muvafaqiyatli qo'shildi Favorite bo'limiga");
+        toast.success("Muvafaqiyatli qo'shildi. Favorite bo'limiga");
       } else {
-        toast.error("Bu mahsulotdan bor Favorite bo'limida");
+        toast.error("Bu mahsulotdan bor. Favorite bo'limida");
       }
+     } else {
+      toast.error("Avval Login qilish kerak");
+
+      
+      router.push("/login")
+     }
     } catch (error) {
       toast.error("Xatolik yuz berdi");
       console.log(error.message);
@@ -67,13 +84,18 @@ function ProductAll({ url }) {
     try {
       const tekshirish2 = allProductHome2.some((product) => product.id === item.id);
 
+     if (token) {
       if (!tekshirish2) {
         setAllProductHome2([...allProductHome2, item]);
         localStorage.setItem("cart", JSON.stringify([...allProductHome2, item]));
-        toast.success("Muvafaqiyatli qo'shildi Cart bo'limiga");
+        toast.success("Muvafaqiyatli qo'shildi. Cart bo'limiga");
       } else {
-        toast.error("Bu mahsulotdan bor Cart bo'limida");
+        toast.error("Bu mahsulotdan bor. Cart bo'limida");
       }
+     } else {
+      toast.error("Avval Login qiling");
+      router.push("/login")
+     }
     } catch (error) {
       toast.error("Xatolik yuz berdi");
       console.log(error.message);
