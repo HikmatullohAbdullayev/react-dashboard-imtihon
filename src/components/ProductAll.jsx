@@ -91,7 +91,6 @@ function ProductAll({url}) {
   };
  
 
-// const [allProduct3, setAllProduct3] = useState([])
 
 const bosildiCart = (item) => {
   try {

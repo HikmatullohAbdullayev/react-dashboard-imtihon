@@ -6,24 +6,33 @@ import  { useEffect, useState } from "react";
 
 function LoginPage(props) {
     const emailRef = useRef(null)
-    const [token,setToken] = useState(null)
-   
+    const passwordRef = useRef(null)
+    
 
-    const handleSubmit = (e)  =>{
-        e.preventDefault();
-        axios.post('https://reqres.in/api/login', {
-            "email": "eve.holt@reqres.in",
-            "password": "cityslicka"
-        })
-          .then(function (response) {
-            setToken(response.data.token)
-            localStorage.setItem("token" , token)
-            console.log(token);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-        }
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      axios.post('https://reqres.in/api/login', {
+        "email": "eve.holt@reqres.in",
+        "password": "cityslicka"
+      })
+      .then(function (response) {
+
+        localStorage.setItem("token", response.data.token);
+
+       
+        console.log(response.data.token);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    };
+
+    useEffect(() => {
+      // Qachondur kerak bo'lishi mumnin
+      const storedToken = localStorage.getItem("token");
+  
+    }, []);
+
     return (
         <section className="flex flex-col justify-between   items-center container px-20 mx-auto max-w-[1338px]  pb-[129px] ">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -47,6 +56,7 @@ function LoginPage(props) {
               Password
             </label>
             <input
+            ref={passwordRef}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-primary"
               type="password"
               name="password"
@@ -69,7 +79,7 @@ function LoginPage(props) {
           <button
           
             className="bg-primary text-white py-16 px-24 rounded-md  focus:outline-none focus:shadow-outline-blue active:bg-primary"
-            type="submit"
+            
           >
             Send
           </button>

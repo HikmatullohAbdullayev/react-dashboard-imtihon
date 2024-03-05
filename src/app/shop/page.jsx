@@ -9,14 +9,15 @@ import { useRouter } from "next/navigation";
 function Shop(props) {
     const router = useRouter()
 
-    const [token, setToken] = useState(null)
+    // const [token, setToken] = useState(null)
 
    useEffect(()=>{
     const chekToken = localStorage.getItem("token")
-    setToken(chekToken)
-     console.log(token);
+    
 
-     if (!token) {
+     if (chekToken) {
+        console.log("marhabo");
+    }else{
         router.push("/login")
     }
    },[])
