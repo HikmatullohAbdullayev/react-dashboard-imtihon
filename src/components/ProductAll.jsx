@@ -20,8 +20,8 @@ function ProductAll({url}) {
   const [filterData, setFilterData] = useState([])
   const [token, setToken] = useState(null)
 
-  const [allProduct, setAllProduct] = useState([])
-  const [allProduct2, setAllProduct2] = useState([])
+  const [allProductFavorite, setAllProductFavorite] = useState([])
+  const [allProductCart, setAllProductCart] = useState([])
 
   // .some((product) => product.id === item.id)
 
@@ -67,12 +67,12 @@ function ProductAll({url}) {
  
   const bosildiFavorite = (item) => {
     try {
-      const tekshirish = allProduct.some((product) => product.id === item.id);
+      const tekshirish = allProductFavorite.some((product) => product.id === item.id);
   
      if (token) {
       if (!tekshirish) {
-        setAllProduct([...allProduct, item]);
-        localStorage.setItem("favorite", JSON.stringify([...allProduct, item]));
+        setAllProductFavorite([...allProductFavorite, item]);
+        localStorage.setItem("favorite", JSON.stringify([...allProductFavorite, item]));
         toast.success("Muvafaqiyatli qo'shildi Favorite bo'limiga");
       } else {
         toast.error("Bu mahsulotdan bor Favorite bo'limida");
@@ -91,16 +91,16 @@ function ProductAll({url}) {
   };
  
 
-const [allProduct2, setAllProduct2] = useState([])
+// const [allProduct3, setAllProduct3] = useState([])
 
 const bosildiCart = (item) => {
   try {
-    const tekshirish = allProduct2.some((product) => product.id === item.id);
+    const tekshirish3 = allProductCart.some((product) => product.id === item.id);
 
    if (token) {
-    if (!tekshirish) {
-      setAllProduct([...allProduct2, item]);
-      localStorage.setItem("Cart", JSON.stringify([...allProduct2, item]));
+    if (!tekshirish3) {
+      setAllProductCart([...allProductCart, item]);
+      localStorage.setItem("Cart", JSON.stringify([...allProductCart, item]));
       toast.success("Muvafaqiyatli qo'shildi Cart bo'limiga");
     } else {
       toast.error("Bu mahsulotdan bor Cart bo'limida");
