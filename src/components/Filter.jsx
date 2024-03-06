@@ -71,55 +71,53 @@ function Filter({ url }) {
           ))}
         </ul>
       </div>
-     <div className=" table1005:w-full table1005:flex-col table1005:items-start table1005:gap-20 ">
-
-     <div className="flex flex-col items-start  max-w-[300px] mt-[64px] mx-auto">
-        <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full ">
-          <p className="block font-semibold text-[20px]  "> SIZE</p>
-          <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">
-            CLEAR{" "}
-            <span>
-              <ClearIcon />
-            </span>
-          </p>
+      <div className=" table1005:w-full table1005:flex-col table1005:items-start table1005:gap-20 ">
+        <div className="flex flex-col items-start  max-w-[300px] mt-[64px] mx-auto">
+          <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full ">
+            <p className="block font-semibold text-[20px]  "> SIZE</p>
+            <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">
+              CLEAR{" "}
+              <span>
+                <ClearIcon />
+              </span>
+            </p>
+          </div>
+          <ul className="grid grid-cols-4 gap-16 mt-32 ">
+            {size.map((item) => (
+              <li key={item.id} className=" ">
+                <p className="border rounded-2 py-[7px] px-[13px] cursor-pointer hover:bg-primary hover:text-white">
+                  {item.size}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="grid grid-cols-4 gap-16 mt-32 ">
-          {size.map((item) => (
-            <li key={item.id} className=" ">
-              <p className="border rounded-2 py-[7px] px-[13px] cursor-pointer hover:bg-primary hover:text-white">
-                {item.size}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="flex flex-col items-start mt-[64px] max-w-[300px] mx-auto">
-        <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full">
-          <p className="block font-semibold text-[20px]  "> COLOR</p>
-          <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">
-            CLEAR{" "}
-            <span>
-              <ClearIcon />
-            </span>
-          </p>
-        </div>
-        <ul className="grid grid-cols-3 gap-8 mt-32 ">
-          {color.map((item) => (
-            <li
-              key={item.id}
-              className=" flex items-center gap-4 cursor-pointer 
+        <div className="flex flex-col items-start mt-[64px] max-w-[300px] mx-auto">
+          <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full">
+            <p className="block font-semibold text-[20px]  "> COLOR</p>
+            <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">
+              CLEAR{" "}
+              <span>
+                <ClearIcon />
+              </span>
+            </p>
+          </div>
+          <ul className="grid grid-cols-3 gap-8 mt-32 ">
+            {color.map((item) => (
+              <li
+                key={item.id}
+                className=" flex items-center gap-4 cursor-pointer 
              "
-            >
-              <span
-                className={`p-15 block  border rounded-2  bg-[${item.code}] hover:border-primary hover:border`}
-              ></span>
-              <p className=" text-[14px] ">{item.color}</p>
-            </li>
-          ))}
-        </ul>
+              >
+                <span
+                  className={`p-15 block  border rounded-2  bg-[${item.code}] hover:border-primary hover:border`}
+                ></span>
+                <p className=" text-[14px] ">{item.color}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-     </div>
     </div>
   );
 }

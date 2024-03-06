@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 function Header(props) {
-
-  
   const [openMenu, setOpenMenu] = useState(true);
   const handeMenu = () => {
     setOpenMenu(!openMenu);
@@ -22,7 +20,7 @@ function Header(props) {
             <Nav />
           </nav>
           <span className="py-[15px] cursor-pointer  ">
-            <Link href="/" >
+            <Link href="/">
               <Logo />
             </Link>
           </span>

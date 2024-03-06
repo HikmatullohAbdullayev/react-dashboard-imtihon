@@ -13,19 +13,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-      <body className= " flex flex-col justify-between h-screen ">
+      <body className=" flex flex-col justify-between h-screen ">
         <div className="box">
-        <Header/>
-        <main className="w-full  text-center align-middle ">
-        {children}
-        </main>
+          <Header />
+          <main className="w-full  text-center align-middle ">{children}</main>
         </div>
 
         <div>
-        <Footer/>
+          <Footer />
         </div>
-        </body>
+      </body>
     </html>
   );
 }

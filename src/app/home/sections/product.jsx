@@ -6,23 +6,20 @@ import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
 import Like2Icon from "@/assets/icon/Like2Icon";
 import ShopIcon from "@/assets/icon/ShopIcon";
-import VectorRigthIcon from "@/assets/icon/VectorRigthIcon"
+import VectorRigthIcon from "@/assets/icon/VectorRigthIcon";
 import { useRouter } from "next/navigation";
-
-
-
 
 function ProductAll({ url }) {
   const [dataa, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [token, setToken] = useState(null)
+  const [token, setToken] = useState(null);
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-    const chekToken = localStorage.getItem("token")
-    setToken(chekToken)
-     console.log(token);
+    const chekToken = localStorage.getItem("token");
+    setToken(chekToken);
+    console.log(token);
 
     const fetchData = async () => {
       try {
@@ -56,22 +53,26 @@ function ProductAll({ url }) {
 
   const bosildiFavorite = (item) => {
     try {
-      const tekshirish = allProductHome.some((product) => product.id === item.id);
+      const tekshirish = allProductHome.some(
+        (product) => product.id === item.id
+      );
 
-     if (token) {
-      if (!tekshirish) {
-        setAllProductHome([...allProductHome, item]);
-        localStorage.setItem("favorite", JSON.stringify([...allProductHome, item]));
-        toast.success("Muvafaqiyatli qo'shildi. Favorite bo'limiga");
+      if (token) {
+        if (!tekshirish) {
+          setAllProductHome([...allProductHome, item]);
+          localStorage.setItem(
+            "favorite",
+            JSON.stringify([...allProductHome, item])
+          );
+          toast.success("Muvafaqiyatli qo'shildi. Favorite bo'limiga");
+        } else {
+          toast.error("Bu mahsulotdan bor. Favorite bo'limida");
+        }
       } else {
-        toast.error("Bu mahsulotdan bor. Favorite bo'limida");
-      }
-     } else {
-      toast.error("Avval Login qilish kerak");
+        toast.error("Avval Login qilish kerak");
 
-      
-      router.push("/login")
-     }
+        router.push("/login");
+      }
     } catch (error) {
       toast.error("Xatolik yuz berdi");
       console.log(error.message);
@@ -82,20 +83,25 @@ function ProductAll({ url }) {
 
   const bosildiCart = (item) => {
     try {
-      const tekshirish2 = allProductHome2.some((product) => product.id === item.id);
+      const tekshirish2 = allProductHome2.some(
+        (product) => product.id === item.id
+      );
 
-     if (token) {
-      if (!tekshirish2) {
-        setAllProductHome2([...allProductHome2, item]);
-        localStorage.setItem("cart", JSON.stringify([...allProductHome2, item]));
-        toast.success("Muvafaqiyatli qo'shildi. Cart bo'limiga");
+      if (token) {
+        if (!tekshirish2) {
+          setAllProductHome2([...allProductHome2, item]);
+          localStorage.setItem(
+            "cart",
+            JSON.stringify([...allProductHome2, item])
+          );
+          toast.success("Muvafaqiyatli qo'shildi. Cart bo'limiga");
+        } else {
+          toast.error("Bu mahsulotdan bor. Cart bo'limida");
+        }
       } else {
-        toast.error("Bu mahsulotdan bor. Cart bo'limida");
+        toast.error("Avval Login qiling");
+        router.push("/login");
       }
-     } else {
-      toast.error("Avval Login qiling");
-      router.push("/login")
-     }
     } catch (error) {
       toast.error("Xatolik yuz berdi");
       console.log(error.message);
@@ -181,13 +187,12 @@ function ProductAll({ url }) {
               </a>
             </li>
           </ul>
-          <a
-          href="#portal"
-          className=" "
-        >
-          {" "}
-          <span className="p-30 inline-block -rotate-90 border  rounded-4 hover:bg-primary "><VectorRigthIcon /></span>
-        </a>
+          <a href="#portal" className=" ">
+            {" "}
+            <span className="p-30 inline-block -rotate-90 border  rounded-4 hover:bg-primary ">
+              <VectorRigthIcon />
+            </span>
+          </a>
         </div>
       </div>
     </section>

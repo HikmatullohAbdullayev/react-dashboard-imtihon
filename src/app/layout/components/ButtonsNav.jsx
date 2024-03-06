@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import SearchIcon from "../../../assets/icon/SearchIcon";
 
 function ButtonsNav(props) {
-  const pathName = usePathname()
+  const pathName = usePathname();
   return (
     <>
       <div className="flex justify-between items-center gap-[30px] table945:flex table945:flex-col ">
@@ -26,18 +26,30 @@ function ButtonsNav(props) {
             </span>
           </label>
         </div>
-        <Link href="/accaunt" >
-          <span className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${pathName === "/accaunt" ? "active" : ""}  `}>
+        <Link href="/accaunt">
+          <span
+            className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${
+              pathName === "/accaunt" ? "active" : ""
+            }  `}
+          >
             <LoginIcon />
           </span>
         </Link>
         <Link href="/shop">
-          <span className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${pathName === "/shop" ? "active" : ""}  `}>
+          <span
+            className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${
+              pathName === "/shop" ? "active" : ""
+            }  `}
+          >
             <CartIcon />
           </span>
         </Link>
         <Link href="/like">
-          <span className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${pathName === "/like" ? "active" : ""}  `}>
+          <span
+            className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${
+              pathName === "/like" ? "active" : ""
+            }  `}
+          >
             <LikeIcon />
           </span>
         </Link>

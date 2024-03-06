@@ -21,8 +21,12 @@ function Hero(props) {
         </div>
       </div>
       <div className="mx-auto text-center ">
-        <p className="text-[30px] font-semibold text-white">Explore our collection</p>
-        <a href="#portal" className=" inline-block p-20"><VectorIcon/></a>
+        <p className="text-[30px] font-semibold text-white">
+          Explore our collection
+        </p>
+        <a href="#portal" className=" inline-block p-20">
+          <VectorIcon />
+        </a>
       </div>
     </div>
   );
