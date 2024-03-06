@@ -26,8 +26,8 @@ function ButtonsNav(props) {
             </span>
           </label>
         </div>
-        <Link href="/login" >
-          <span className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${pathName === "/login" ? "active" : ""}  `}>
+        <Link href="/accaunt" >
+          <span className={`w-[16px] h-[16px]  hover:fill-primary cursor-pointer ${pathName === "/accaunt" ? "active" : ""}  `}>
             <LoginIcon />
           </span>
         </Link>

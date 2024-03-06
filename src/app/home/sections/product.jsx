@@ -150,8 +150,9 @@ function ProductAll({ url }) {
           ))}
         </div>
 
-        <div className="paggination mt-[85px] ">
-          <ul className="flex justify-center items-center gap-10 ">
+        <div className="paggination mt-[85px] max-w-full flex justify-between items-center">
+          <div></div>
+          <ul className="flex justify-between items-center gap-10 ">
             <li className=" border-b-2 hover:border-primary  ">
               <a
                 href="#portal"
@@ -180,14 +181,14 @@ function ProductAll({ url }) {
               </a>
             </li>
           </ul>
-        </div>
-        <a
+          <a
           href="#portal"
-          className="fixed bottom-[80px] right-[52px] p-30 border rounded-8 -rotate-90 hover:bg-primary"
+          className=" "
         >
           {" "}
-          <VectorRigthIcon />
+          <span className="p-30 inline-block -rotate-90 border  rounded-4 hover:bg-primary "><VectorRigthIcon /></span>
         </a>
+        </div>
       </div>
     </section>
   );
