@@ -9,7 +9,7 @@ function AccessoriesHero(props) {
     <section className="max-w-[1390px] mx-auto container">
       <h1>AccessoriesHero</h1>
 
-      <div className="flex justify-between items-start mt-18">
+      <div className="flex justify-between items-start mt-18 table1005:flex table1005:flex-col">
         
     <Filter  url={"shoes"} />
         <ProductAll url={"accessories"} />

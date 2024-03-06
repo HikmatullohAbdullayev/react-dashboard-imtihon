@@ -113,15 +113,23 @@ const bosildiCart = (item) => {
 
 
   return (
-    <section
+    <div className="flex flex-col w-full">
+     <div className="text-end mr-20 border-b-2 border-[#686868]  p-[33px]">
+      <select className=" rounded-4 px-10 py-16 border outline-transparent focus:outline-primary">
+          <option className=" hover:bg-primary" value="Most popular" default>Most popular</option>
+          <option value="Best Selling">Best Selling</option>
+          <option value="Price: High to Low">Price: High to Low</option>
+          <option value="Price: Low to High">Price: Low to High</option>
+        </select></div>
+    <div
       id="portal"
       className="   flex justify-between   items-center container px-20 mx-auto max-w-[1338px]  pb-[129px] "
     >
       <Toaster position="top-center" reverseOrder={false} />
-
+       
     
 
-      <div className="w-full text-center ">
+      <div className="w-full text-center mt-30 ">
         <div className="grid gap-40  relative  w-[100%]    bg-white rounded-6    grid-cols-[repeat(auto-fill,minmax(280px,1fr))]  mx-auto">
           {dataa.map((item) => (
             <div
@@ -162,8 +170,9 @@ const bosildiCart = (item) => {
           )) }
         </div>
 
-        <div className="paggination mt-[85px] ">
-          <ul className="flex justify-center items-center gap-10 ">
+        <div className="paggination mt-[85px] max-w-full flex justify-between items-center">
+          <div></div>
+          <ul className="flex justify-between items-center gap-10 ">
             <li className=" border-b-2 hover:border-primary  ">
               <a
                 href="#portal"
@@ -192,16 +201,18 @@ const bosildiCart = (item) => {
               </a>
             </li>
           </ul>
-        </div>
-        <a
+          <a
           href="#portal"
-          className="fixed bottom-[80px] right-[52px] p-30 border rounded-8 -rotate-90 hover:bg-primary"
+          className=" "
         >
           {" "}
-          <VectorRigthIcon />
+          <span className="p-30 inline-block -rotate-90 border  rounded-4 hover:bg-primary "><VectorRigthIcon /></span>
         </a>
+        </div>
+      
       </div>
-    </section>
+    </div>
+    </div>
   );
 }
 
