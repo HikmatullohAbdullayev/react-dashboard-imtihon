@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { request } from "@/config/request";
 import { data } from "autoprefixer";
+import ClearIcon from "../assets/icon/ClearIcon"
 
 function Filter({ url }) {
   const [dataa, setData] = useState([]);
@@ -10,29 +11,32 @@ function Filter({ url }) {
    {id:"2",  size: "XS"},
    {id:"3",  size: "S"},
    {id:"4",  size: "M"},
-   {id:"5",  size: "XL"},
-   {id:"6",  size: "23"},
-   {id:"7",  size: "24"},
-   {id:"8",  size: "25"},
-   {id:"9",  size: "26"},
-   {id:"10", size:  "28"},
-   {id:"11", size:  "29"},
-   {id:"12", size:  "30"},
-   {id:"13", size:  "31"},
-   {id:"14", size:  "32"}
+   {id:"5",  size: "L"},
+   {id:"6",  size: "XL"},
+   {id:"7",  size: "23"},
+   {id:"8",  size: "24"},
+   {id:"9",  size: "25"},
+   {id:"10",  size: "26"},
+   {id:"11",  size: "27"},
+   {id:"12", size:  "28"},
+   {id:"13", size:  "29"},
+   {id:"14", size:  "30"},
+   {id:"15", size:  "31"},
+   {id:"16", size:  "32"}
   ];
   const color = [
- {id:"1", color: "Beige" , code:"cc"},
- {id:"2", color: "Beige" , code:"cc"},
- {id:"3", color: "Beige" , code:"cc"},
- {id:"4", color: "Beige" , code:"cc"},
- {id:"5", color: "Beige" , code:"cc"},
- {id:"6", color: "Beige" , code:"cc"},
- {id:"7", color: "Beige" , code:"cc"},
- {id:"8", color: "Beige" , code:"cc"},
- {id:"9", color: "Beige" , code:"cc"},
- {id:"10", color: "Beige" , code:"cc"},
- {id:"11", color: "Beige" , code:"cc"},
+ {id:"1", color: "Beige" , code:"#F3ECDB"},
+ {id:"2", color: "Blue" , code:"#465BA3"},
+ {id:"3", color: "Black" , code:"#000000"},
+ {id:"4", color: "Orange" , code:"#F07B4E"},
+ {id:"5", color: "Green" , code:"#41854D"},
+ {id:"6", color: "Brown" , code:"#665147"},
+ {id:"7", color: "Purple" , code:"#893D88"},
+ {id:"8", color: "Gold" , code:"#F3B121FF"},
+ {id:"9", color: "Taupe" , code:"#CAC1B8"},
+ {id:"10", color: "White" , code:"#FFFFFF"},
+ {id:"11", color: "Pink" , code:"#F2A1B1"},
+ {id:"12", color: "Red" , code:"#D23C47"},
  
   ];
   const category = [
@@ -50,36 +54,43 @@ function Filter({ url }) {
     { id: 12, category: "Leather" },
     { id: 13, category: "Sweaters & knits" },
   ];
-
+  
+console.log(color);
   return (
     <div className="w-[300px]">
-      <div className="flex items-start border w-full">
-        <ul> 
-            <p>CATEGORY</p>
+      <div className="flex items-start border-t-2 border-[#686868] w-full">
+        <ul className="pt-32 flex flex-col justify-start gap-16"> 
           {category.map((item) => (
-            <li key={item.id} className="flex items-start " >
-              <p>{item.category}</p>
+            <li key={item.id} className="flex items-start text-[#686868] cursor-pointer hover:text-primary" >
+              <p className="font-semibold text-16 ">{item.category}</p>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex flex-col items-start border w-full">
-            <p className="block"> SIZE</p>
-        <ul className="grid grid-cols-3 "> 
+      <div className="flex flex-col items-start  w-full mt-[64px]">
+            <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full">
+            <p className="block font-semibold text-[20px]  "> SIZE</p>
+            <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">CLEAR <span ><ClearIcon/></span></p>
+            </div>
+        <ul className="grid grid-cols-4 gap-16 mt-32 "> 
           {size.map((item) => (
             <li key={item.id}  className=" " >
-               <p>{item.size}</p>
+               <p className="border rounded-2 py-[7px] px-[13px] cursor-pointer hover:bg-primary hover:text-white">{item.size}</p>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex flex-col items-start border w-full">
-            <p className="block"> COLOR</p>
-        <ul className="grid grid-cols-3 "> 
+      <div className="flex flex-col items-start mt-[64px] w-full">
+      <div className="flex justify-between border-b-2 py-15 border-[#686868] w-full">
+            <p className="block font-semibold text-[20px]  "> COLOR</p>
+            <p className="flex items-center gap-10 px-10 cursor-pointer font-semibold text-[#686868] text-[14px]">CLEAR <span ><ClearIcon/></span></p>
+            </div>
+        <ul className="grid grid-cols-3 gap-8 mt-32 "> 
           {color.map((item) => (
-            <li key={item.id} className=" " >
-              <span className="p-20 border"></span>
-              <p>{item.color}</p>
+            <li key={item.id} className=" flex items-center gap-4 cursor-pointer
+             " >
+              <span className={`p-15 block  border rounded-2  bg-[${item.code}] hover:border-primary hover:border`}></span>
+              <p className=" text-[14px] ">{item.color}</p>
             </li>
           ))}
         </ul>
@@ -90,3 +101,4 @@ function Filter({ url }) {
 }
 
 export default Filter;
+// ${item.code}

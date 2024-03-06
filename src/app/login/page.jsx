@@ -4,6 +4,8 @@ import {useRef} from "react"
 import axios from 'axios';
 import  { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -13,12 +15,13 @@ function LoginPage(props) {
   const emailRef = useRef(null)
     const passwordRef = useRef(null)
     
-
     const handleSubmit = (e) => {
       e.preventDefault();
+      console.log(emailRef.current.value);
+      console.log(passwordRef.current.value);
       axios.post('https://reqres.in/api/login', {
-        "email": "eve.holt@reqres.in",
-        "password": "cityslicka"
+        "email": emailRef.current.value,
+        "password": passwordRef.current.value,
       })
       .then(function (response) {
 
@@ -31,6 +34,8 @@ function LoginPage(props) {
       })
       .catch(function (error) {
         console.log(error);
+        toast.error("Emailda xatolik bor, qaytadan urinib ko'ring");
+        
       });
     };
 
@@ -42,6 +47,7 @@ function LoginPage(props) {
 
     return (
         <section className="flex flex-col justify-between   items-center container px-20 mx-auto max-w-[1338px]  pb-[129px] ">
+        <Toaster position="top-center" reverseOrder={false} />
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <form className="max-w-[400px] mx-auto" onSubmit={handleSubmit} >
           <div className="mb-4">

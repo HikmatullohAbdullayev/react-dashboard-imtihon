@@ -1,9 +1,10 @@
 import React from 'react';
+import AccessoriesHero from "./section/AccessoriesHero"
 
 function Accessories(props) {
     return (
         <div>
-            Accessories
+            <AccessoriesHero/>
         </div>
     );
 }

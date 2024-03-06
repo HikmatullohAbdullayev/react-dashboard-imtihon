@@ -1,9 +1,10 @@
 import React from 'react';
+import ShoesHero from "./section/ShoesHero"
 
 function Shoes(props) {
     return (
         <div>
-            shoes
+            <ShoesHero/>
         </div>
     );
 }

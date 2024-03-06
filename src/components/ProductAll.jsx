@@ -23,12 +23,6 @@ function ProductAll({url}) {
   const [allProductFavorite, setAllProductFavorite] = useState([])
   const [allProductCart, setAllProductCart] = useState([])
 
-  // .some((product) => product.id === item.id)
-
- 
-
-
-
   useEffect(() => {
     const chekToken = localStorage.getItem("token")
     setToken(chekToken)
