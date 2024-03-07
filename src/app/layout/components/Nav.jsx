@@ -18,8 +18,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          href="/clothes"
-          prefetch={false}
+          to href="/clothes"
           className={`${pathName === "/clothes" ? "active" : ""}`}
         >
           Clothes
@@ -27,8 +26,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          href="/shoes"
-          prefetch={true}
+           to href="/shoes"
           className={`${pathName === "/shoes" ? "active" : ""}`}
         >
           Shoes
