@@ -18,7 +18,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          to href="/clothes"
+          to href="/src/app/clothes/page.jsx"
           className={`${pathName === "/clothes" ? "active" : ""}`}
         >
           Clothes
@@ -26,7 +26,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-           to href="/shoes"
+           to href="/src/app/shoes/page.jsx"
           className={`${pathName === "/shoes" ? "active" : ""}`}
         >
           Shoes
