@@ -18,6 +18,7 @@ function ProductAll({ url }) {
   const [category, setCategory] = useState({});
   const [filterData, setFilterData] = useState([]);
   const [token, setToken] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
   const [allProductFavorite, setAllProductFavorite] = useState([]);
   const [allProductCart, setAllProductCart] = useState([]);
@@ -26,6 +27,11 @@ function ProductAll({ url }) {
     const chekToken = localStorage.getItem("token");
     setToken(chekToken);
     console.log(token);
+
+    const chekInfo = localStorage.getItem("userInfo");
+    setUserInfo(chekInfo);
+    console.log(userInfo);
+    console.log(chekInfo);
 
     const fetchData = async () => {
       try {
@@ -61,7 +67,7 @@ function ProductAll({ url }) {
         (product) => product.id === item.id
       );
 
-      if (token) {
+      if (token || chekInfo) {
         if (!tekshirish) {
           setAllProductFavorite([...allProductFavorite, item]);
           localStorage.setItem(
