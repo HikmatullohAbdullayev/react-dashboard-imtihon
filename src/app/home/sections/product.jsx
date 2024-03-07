@@ -17,9 +17,7 @@ function ProductAll({ url }) {
   const router = useRouter();
 
   useEffect(() => {
-    const chekToken = localStorage.getItem("token");
-    setToken(chekToken);
-    console.log(token);
+   
 
     const fetchData = async () => {
       try {
@@ -47,6 +45,12 @@ function ProductAll({ url }) {
 
     fetchData();
   }, [page]);
+
+  useEffect(() => {
+    const chekToken = localStorage.getItem("token");
+    setToken(chekToken);
+    console.log(token);
+  },[])
 
   console.log(dataa);
 
