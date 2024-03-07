@@ -47,6 +47,7 @@ function ProductAll({ url }) {
 
     fetchData();
   }, [page]);
+
   console.log(dataa);
 
   const [allProductHome, setAllProductHome] = useState([]);

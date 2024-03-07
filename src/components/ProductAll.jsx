@@ -67,7 +67,7 @@ function ProductAll({ url }) {
         (product) => product.id === item.id
       );
 
-      if (token || chekInfo) {
+      if (token ) {
         if (!tekshirish) {
           setAllProductFavorite([...allProductFavorite, item]);
           localStorage.setItem(

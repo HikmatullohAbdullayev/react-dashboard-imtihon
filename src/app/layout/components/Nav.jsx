@@ -12,13 +12,13 @@ function Nav(props) {
   return (
     <ul className=" flex justify-between items-center gap-[61px] table1005:gap-[30px] table945:flex table945:flex-col  ">
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
-        <Link to="/" className={`${pathName === "/" ? "active" : ""}`}>
+        <Link  href="/" className={`${pathName === "/" ? "active" : ""}`}>
           Home
         </Link>
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          to="/clothes"
+          href="/clothes"
           className={`${pathName === "/clothes" ? "active" : ""}`}
         >
           Clothes
@@ -26,7 +26,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-           to="/shoes"
+           href="/shoes"
           className={`${pathName === "/shoes" ? "active" : ""}`}
         >
           Shoes
@@ -34,7 +34,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          to="/accessories"
+          href="/accessories"
           className={`${pathName === "/accessories" ? "active" : ""}`}
         >
           Accessories
