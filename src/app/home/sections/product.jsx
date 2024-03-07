@@ -46,11 +46,11 @@ function ProductAll({ url }) {
     fetchData();
   }, [page]);
 
-  useEffect(() => {
-    const chekToken = localStorage.getItem("token");
-    setToken(chekToken);
-    console.log(token);
-  },[])
+  const chekToken = localStorage.getItem("token");
+  setToken(chekToken);
+  console.log(token);
+  // useEffect(() => {
+  // },[])
 
   console.log(dataa);
 
