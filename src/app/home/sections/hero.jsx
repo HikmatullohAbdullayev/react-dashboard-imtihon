@@ -4,7 +4,6 @@ import img from "../../../../public/img.png";
 import banner from "../../../../public/LogoBanner.png";
 import VectorIcon from "@/assets/icon/VectorIcon";
 import "./img.css";
-import Link from "next/link";
 
 function Hero(props) {
   return (

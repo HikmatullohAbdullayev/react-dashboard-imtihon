@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
 
 function Nav(props) {
   const pathName = usePathname();
@@ -30,7 +29,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-           href="/shoes"
+           href="shoes"
           className={`${pathName === "/shoes" ? "active" : ""}`}
         >
           Shoes
@@ -38,7 +37,7 @@ function Nav(props) {
       </li>
       <li className=" py-[3px] font-semibold text-14  hover:text-primary">
         <Link
-          href="/accessories"
+          href="accessories"
           className={`${pathName === "/accessories" ? "active" : ""}`}
         >
           Accessories

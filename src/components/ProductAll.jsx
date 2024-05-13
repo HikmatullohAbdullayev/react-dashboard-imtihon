@@ -182,7 +182,7 @@ function ProductAll({ url }) {
             <ul className="flex justify-between items-center gap-10 ">
               <li className=" border-b-2 hover:border-primary  ">
                 <a
-                  href="#portal"
+                  href="#"
                   onClick={() => setPage(1)}
                   className="text-24 block py-[19px] px-32"
                 >

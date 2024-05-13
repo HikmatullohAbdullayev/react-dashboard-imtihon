@@ -20,7 +20,7 @@ function Header(props) {
             <Nav />
           </nav>
           <span className="py-[15px] cursor-pointer  ">
-            <Link href="/">
+            <Link to="home">
               <Logo />
             </Link>
           </span>
@@ -32,7 +32,7 @@ function Header(props) {
       <header className=" hidden table945:block w-screen bg-#F5F5F5  ">
         <div className="flex justify-between w-full z-0   items-center container px-20 mx-auto max-w-[1169px] my-20 ">
           <span className="py-[15px] cursor-pointer mx-auto ">
-            <Link href="/">
+            <Link href="home">
               <Logo />
             </Link>
           </span>
